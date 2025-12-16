@@ -76,9 +76,10 @@ export function middleware(request: NextRequest) {
 }
 
 // Configure the middleware to run only on specific paths
-// export const config = {
-//   matcher: [
-//     // Match all paths under /contracts
-//     "/contracts/:path*",
-//   ],
-// };
+export const config = {
+  matcher: [
+    // Match all paths under /contracts
+    // "/contracts/:path*",
+    "/((?!api|_next/static|_next/image|favicon.ico|sitemap.xml|robots.txt).*)",
+  ],
+};
