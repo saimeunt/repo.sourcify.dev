@@ -9,7 +9,6 @@ export function middleware(request: NextRequest) {
   if (!serverUrl) {
     throw new Error("SOURCIFY_SERVER_URL is not set");
   }
-
   const sessionCookie = request.cookies.get(
     `${
       process.env.NODE_ENV === "production" ? "__Secure-" : ""
@@ -79,7 +78,7 @@ export function middleware(request: NextRequest) {
 export const config = {
   matcher: [
     // Match all paths under /contracts
-    // "/contracts/:path*",
-    "/((?!api|_next/static|_next/image|favicon.ico|sitemap.xml|robots.txt).*)",
+    "/contracts/:path*",
+    "/",
   ],
 };
